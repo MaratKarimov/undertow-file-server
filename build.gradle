@@ -1,0 +1,27 @@
+// plugins
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.3'
+}
+
+group 'ru.maratk'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Undertow Core
+    compile group: 'io.undertow', name: 'undertow-core', version: '2.0.23.Final'
+    // JUnit
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+mainClassName = 'ru.maratk.undertow.file.server.App'
